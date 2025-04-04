@@ -1,6 +1,8 @@
 //Luiza e Thabata
 
-import { Component, Input, input } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { BotaoComponent } from "../botao/botao.component";
+import { FrasesComponent } from "../frases/frases.component";
 
 @Component({
   selector: 'app-imagem',
@@ -9,14 +11,14 @@ import { Component, Input, input } from '@angular/core';
   styleUrl: './imagem.component.css'
 })
 export class ImagemComponent {
-  img = "biscoito.png";
+  @Input() srcBiscoito = "biscoito.png";
 
-  trocarImg(){
+  /*trocarImg(){
     if(this.img == "biscoito.png"){
       this.img = "biscoitoQuebrado.png";
     }else{
       this.img = "biscoito.png";
     }
-  }
+  }*/
 
 }

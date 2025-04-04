@@ -1,4 +1,8 @@
-<p>Biscoitão</p>
-<img class = "img" [src] = "img">
-<p class="texto">{{sortearFrase()}}</p>
+<div class="container">
+    <app-imagem [srcBiscoito]="statusBiscoito"></app-imagem>
+    <app-botao
+    (estadoBiscoito)="reiniciar($event)">
+    </app-botao>
+    <app-frases></app-frases>
+</div>
 

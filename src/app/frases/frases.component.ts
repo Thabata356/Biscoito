@@ -1,5 +1,7 @@
 //Luiza e Thabata
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { BotaoComponent } from "../botao/botao.component";
+import { ImagemComponent } from "../imagem/imagem.component";
 
 @Component({
   selector: 'app-frases',
@@ -8,6 +10,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './frases.component.css'
 })
 export class FrasesComponent {
+  @Input() exibeFrase = false
 
   frases = ["Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.",
     "Não há que ser forte. Há que ser flexível.",
@@ -24,5 +27,15 @@ export class FrasesComponent {
     let random = this.frases[Math.floor(Math.random() * this.frases.length)];
     return random;
     }
+
+  /*Frase(){
+    if(this.img == "biscoitoQuebrado.png"){
+      let random = this.frases[Math.floor(Math.random() * this.frases.length)];
+      return random;}
+    else if(this.img == "biscoito.png"){
+      return "";}
+
+    return"";
+    }*/
 
 }

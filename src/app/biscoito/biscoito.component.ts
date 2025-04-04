@@ -1,32 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { BotaoComponent } from "../botao/botao.component";
+import { ImagemComponent } from "../imagem/imagem.component";
+import { FrasesComponent } from "../frases/frases.component";
 
 @Component({
   selector: 'app-biscoito',
-  imports: [],
+  imports: [FrasesComponent, BotaoComponent, ImagemComponent],
   templateUrl: './biscoito.component.html',
   styleUrl: './biscoito.component.css'
 })
 export class BiscoitoComponent {
-  @Input() frase = "";
-  @Input()img = "biscoito.png";
+  @Input() frase : string = "";
+  @Input() statusBiscoito : string = "";
 
-  frases = ["Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.",
-    "Não há que ser forte. Há que ser flexível.",
-    "Lamentar aquilo que não temos é desperdiçar aquilo que já possuímos.",
-    "A adversidade é um espelho que reflete o verdadeiro eu.",
-    "Realize o óbvio, pense no improvável e conquiste o impossível.",
-    "Motivação não é sinônimo de transformação, mas um passo em sua direção.",
-    "Acredite em milagres, mas não dependa deles.",
-    "Você precisa fazer aquilo que pensa que não é capaz de fazer.",
-    "Espere pelo mais sábio dos conselhos: o tempo.",
-    "Um novo começo é muitas vezes disfarçado de um final."];
+  quebrar(biscoito: string){
+    this.statusBiscoito = biscoito;
+  }
 
-  sortearFrase(){
-    if(this.img == "biscoitoQuebrado.png"){
-      let random = this.frases[Math.floor(Math.random() * this.frases.length)];
-      return random;}
-    else if(this.img == "biscoito.png"){
-      return "";}
-    return"";
-    }
+  reiniciar(biscoito: string){
+    this.statusBiscoito = biscoito;
+  }
+
 }

@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ImagemComponent } from "../imagem/imagem.component";
+import { FrasesComponent } from "../frases/frases.component";
 
 @Component({
   selector: 'app-botao',
@@ -7,12 +9,21 @@ import { Component, Input } from '@angular/core';
   styleUrl: './botao.component.css'
 })
 export class BotaoComponent {
-  @Input() img = "biscoito.png";
-  @Input() botao: string = "";
-  @Input() texto: string = "";
+  @Output() estadoBiscoito = new EventEmitter()
+  @Input() tipoBotao: string = "";
+  @Input() textoBotao: string = "";
 
+  quebrarBiscoito(){
+    var biscoito = "biscoitoQuebrado.png"
+    this.estadoBiscoito.emit(biscoito);
+  }
+  
+  restaurarBiscoito(){
+     var reiniciarBiscoito = "biscoito.png"
+     this.estadoBiscoito.emit(reiniciarBiscoito);
+  }
 
-  quebrar(){
+  /*quebrar(){
     if(this.img == "biscoito.png"){
       this.img = "biscoitoQuebrado.png";
     }else{
@@ -26,5 +37,5 @@ export class BotaoComponent {
     }else{
       this.img = "biscoito.png";
     }
-  }
+  }*/
 }
