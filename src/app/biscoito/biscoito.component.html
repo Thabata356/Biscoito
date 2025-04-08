@@ -1,8 +1,7 @@
 <div class="container">
-    <app-imagem [srcBiscoito]="statusBiscoito"></app-imagem>
-    <app-botao
-    (estadoBiscoito)="reiniciar($event)">
-    </app-botao>
-    <app-frases></app-frases>
+    <app-imagem [quebrado]="ehQuebrado"></app-imagem>
+    <app-frases [exibeFrase]="ehQuebrado"></app-frases>
+    <app-botao [label] ="'Quebrar biscoito'" (clicked)="quebrar()" [disabled]="ehQuebrado"></app-botao>
+    <app-botao [label]="'Reiniciar Biscoito'" [primary]="false" (clicked)="reiniciar()"></app-botao>
 </div>
 

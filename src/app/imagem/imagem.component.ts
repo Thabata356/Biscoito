@@ -11,7 +11,10 @@ import { FrasesComponent } from "../frases/frases.component";
   styleUrl: './imagem.component.css'
 })
 export class ImagemComponent {
-  @Input() srcBiscoito = "biscoito.png";
+  @Input() quebrado : boolean = true;
+
+  imgBiscoito : string = "biscoito.png";
+  imgBiscoitoQuebrado : string = "biscoitoQuebrado.png";
 
   /*trocarImg(){
     if(this.img == "biscoito.png"){

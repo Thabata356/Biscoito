@@ -1,13 +1,57 @@
-.img {
-  width: 230px;
-  height: 230px;
-  }
-
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-   }
+}
+
+/* Imagem do biscoito */
+.img {
+  width: 230px;
+  height: 230px;
+}
+
+/* Texto da frase */
+.textoFrase {
+  font-size: 20px;
+  color: #dd7b22;
+  margin: 30px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Botões */
+.botao {
+  width: 230px;
+  height: 50px;
+  border: 2px solid #dd7b22;
+  border-radius: 25px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+/* Área do texto do botão */
+.btnArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Texto do botão */
+.btnTexto {
+  font-size: 18px;
+  font-weight: bold;
+  color: #dd7b22;
+}
+
+/* Botão de reiniciar (estilo adicional) */
+.reiniciar-botao {
+  border-color: #121212;
+}
+
+.reiniciar-botao .btnTexto {
+  color: #121212;
+}

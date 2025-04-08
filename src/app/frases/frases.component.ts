@@ -10,7 +10,7 @@ import { ImagemComponent } from "../imagem/imagem.component";
   styleUrl: './frases.component.css'
 })
 export class FrasesComponent {
-  @Input() exibeFrase = false
+  @Input() exibeFrase : boolean = false
 
   frases = ["Demonstre amor e alegria em todas as oportunidades e verás que a paz nasce dentro de você.",
     "Não há que ser forte. Há que ser flexível.",

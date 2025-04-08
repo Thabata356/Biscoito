@@ -9,19 +9,26 @@ import { FrasesComponent } from "../frases/frases.component";
   styleUrl: './botao.component.css'
 })
 export class BotaoComponent {
-  @Output() estadoBiscoito = new EventEmitter()
-  @Input() tipoBotao: string = "";
-  @Input() textoBotao: string = "";
+  @Input() label : string = "";
+  @Input() primary : boolean = true;
+  @Output() clicked = new EventEmitter();
+  @Input() disabled : boolean = false;
+  //@Input() tipoBotao: string = "";
+  //@Input() textoBotao: string = "";
 
-  quebrarBiscoito(){
+  onClick(){
+    this.clicked.emit();
+  }
+
+  /*quebrarBiscoito(){
     var biscoito = "biscoitoQuebrado.png"
     this.estadoBiscoito.emit(biscoito);
   }
-  
+
   restaurarBiscoito(){
      var reiniciarBiscoito = "biscoito.png"
      this.estadoBiscoito.emit(reiniciarBiscoito);
-  }
+  }*/
 
   /*quebrar(){
     if(this.img == "biscoito.png"){
